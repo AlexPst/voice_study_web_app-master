@@ -74,14 +74,20 @@ class HeaderMobileView extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return Column(
       children: [
+      
       Container(
       padding: kScreenPadding,
       height: height * 0.9,
-      width: width,
-     child: Image.asset('lib/images/header_mobile_photo.png'),
+      width: 300,
+     child: Image.asset("lib/images/header_mobile_photo.png", 
+      fit: BoxFit.fitWidth,),
     ),
-    Spacer(),
-    HeaderBody(isMobile: true),
+      SizedBox(height: 200,),
+    Align(alignment: Alignment.topRight,
+    child: Expanded(
+      child: const HeaderBody(isMobile: true),
+    )
+    )
       ],
     );
     
